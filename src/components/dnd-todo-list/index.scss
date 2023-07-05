@@ -1,0 +1,59 @@
+@use "../../styles/index.scss" as *;
+
+   .todo-container {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    p {
+        width: 100%;
+    }
+    button {
+        background-color: transparent;
+        visibility: hidden;
+        transition: 0.3s ease;
+    }
+    button:hover{
+        transform: rotate(90deg);
+    }
+    &:hover button {
+        visibility: visible;
+    }
+} 
+
+
+.completed{
+    text-decoration: line-through;
+}
+
+
+#dark{
+    .todo-container{
+        background-color: $very-dark-desaturated-blue;
+        border-top: 1px solid $very-dark-grayish-blue-dark;
+        border-bottom: 1px solid $very-dark-grayish-blue-dark;
+        color: $very-light-grey;
+    }
+    .completed{
+        color: $very-dark-grayish-blue-dark;
+        p{
+            color: $very-dark-grayish-blue-dark;
+        }
+    }
+}
+
+#light{
+    .todo-container{
+        background-color: $very-light-grey;
+        border-top: 1px solid $very-light-grayish-blue;
+        border-bottom: 1px solid $very-light-grayish-blue;
+        color: $very-dark-grayish-blue;
+    }
+    .completed{
+        color: $light-grayish-blue;
+        p{
+            color: $light-grayish-blue;
+        }
+    }
+}
+
